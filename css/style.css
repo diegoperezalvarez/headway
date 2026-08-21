@@ -34,6 +34,33 @@ header {
   border-bottom: 1px dashed #eee;
 }
 
+/* Center and constrain exported notebook containers */
+body, .marimo-notebook, .notebook-container {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+}
+
+.author-card {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.author-card hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.author-card a {
+  color: var(--color-link);
+  font-weight: 500;
+}
+
 a {
   color: var(--color-link);
   text-decoration: none;
