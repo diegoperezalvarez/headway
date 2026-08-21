@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Headway</title>
+  <link>https://diegoperezalvarez.github.io/headway/</link>
+  <description>Notes, transit, and miscellany.</description>
+  <language>en-gb</language>
+  <atom:link href="https://diegoperezalvarez.github.io/headway/feed.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Station Categorisation (1/2)</title>
+    <link>https://diegoperezalvarez.github.io/headway/articles/station-categorisation-1.html</link>
+    <guid>https://diegoperezalvarez.github.io/headway/articles/station-categorisation-1.html</guid>
+    <pubDate>Fri, 21 Aug 2026 18:48:00 GMT</pubDate>
+    <description>Station categorisation, what why and how.</description>
+  </item>
+
+</channel>
+</rss>
