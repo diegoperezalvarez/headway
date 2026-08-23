@@ -1,68 +1,147 @@
+/* ==========================================================================
+   1. FONTS & THEME VARIABLES (Nord Palette)
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&display=swap");
+
 :root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --max-width: 720px;
-  --color-bg: #fafafa;
-  --color-text: #222;
-  --color-link: #0066cc;
+  --monospace-font: "Fira Code", monospace;
+  --text-font: "Merriweather", serif;
+  --heading-font: "Merriweather", serif;
+  --radius: 12px;
+  --max-width: 760px;
 }
 
-body {
-  font-family: var(--font-sans);
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
+/* Base Colors */
+:root {
+  --background: light-dark(#ffffff, #2e3440);          /* Main page background: pure white */
+  --foreground: light-dark(#2e3440, #d8dee9);          /* Body text: dark slate */
+  --muted: light-dark(#e5e9f0, #434c5e);               /* Soft gray-blue background for elements */
+  --muted-foreground: light-dark(#4c566a, #a3be8c);    /* Subtle sub-text */
+  --popover: light-dark(#f0f4fc, #3b4252);
+  --popover-foreground: light-dark(#2e3440, #d8dee9);
+  --card: light-dark(#f8fafc, #3b4252);               /* Slight off-white tint for cards */
+  --card-foreground: light-dark(#3b4252, #e5e9f0);
+  --border: light-dark(#e2e8f0, #4c566a);             /* Crisp, light divider lines */
+  --input: light-dark(#e5e9f0, #3b4252);              /* Former background shade used for inputs */
+  --primary: light-dark(#5e81ac, #88c0d0);
+  --primary-foreground: light-dark(#ffffff, #2e3440);
+  --secondary: light-dark(#81a1c1, #4c566a);
+  --secondary-foreground: light-dark(#2e3440, #eceff4);
+  --accent: light-dark(#88c0d0, #5e81ac);
+  --accent-foreground: light-dark(#ffffff, #969eb0);
+  --ring: light-dark(#81a1c1, #5e81ac);
+}
+
+/* Semantic Colors */
+:root {
+  --destructive: hsl(0deg 100% 65%);
+  --destructive-foreground: light-dark(#eceff4, #2e3440);
+  --error: light-dark(#bf616a, #bf616a);
+  --error-foreground: light-dark(#eceff4, #2e3440);
+  --success: light-dark(#a3be8c, #a3be8c);
+  --success-foreground: light-dark(#eceff4, #2e3440);
+  --action: light-dark(#ebcb8b, #ebcb8b);
+  --action-hover: light-dark(#f0d9a8, #eacb8b);
+  --action-foreground: light-dark(#2e3440, #2e3440);
+  --link: light-dark(#5e81ac, #88c0d0);
+  --link-visited: light-dark(#b48ead, #b48ead);
+  --stale: hsl(42deg 56% 44% / 25%);
+}
+
+/* Shadows */
+:root {
+  --base-shadow: light-dark(
+    hsla(0deg, 0%, 85%, 40%),
+    hsla(0deg, 0%, 36%, 60%)
+  );
+  --base-shadow-darker: light-dark(
+    hsla(0deg, 0%, 50%, 40%),
+    hsla(0deg, 0%, 50%, 60%)
+  );
+  --base-shadow-opacity: 5%;
+}
+
+/* ==========================================================================
+   2. GLOBAL BODY & CONTAINER STYLES
+   ========================================================================== */
+
+body, 
+.marimo, 
+[data-marimo-app] {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  font-family: var(--text-font) !important;
+  line-height: 1.7;
   max-width: var(--max-width);
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
-header {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 2rem;
+/* Align marimo container width with homepage */
+.marimo-notebook, 
+.marimo-app {
+  max-width: var(--max-width) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   3. HEADWAY SITE HEADER & AUTHOR FOOTER
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
   padding-bottom: 1rem;
 }
+
+.site-title {
+  font-family: var(--heading-font);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--primary);
+}
+
+.site-tagline {
+  margin-top: 0.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.author-card {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+}
+
+/* ==========================================================================
+   4. HOMEPAGE LISTINGS & TYPOGRAPHY
+   ========================================================================== */
 
 .article-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .article-list li {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px dashed #eee;
-}
-
-/* Center and constrain exported notebook containers */
-body, .marimo-notebook, .notebook-container {
-  max-width: var(--max-width);
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: var(--font-sans);
-  color: var(--color-text);
-}
-
-.author-card {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.author-card hr {
-  border: 0;
-  border-top: 1px solid #e0e0e0;
-  margin-bottom: 1.5rem;
-}
-
-.author-card a {
-  color: var(--color-link);
-  font-weight: 500;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--border);
 }
 
 a {
-  color: var(--color-link);
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -70,7 +149,12 @@ a:hover {
   text-decoration: underline;
 }
 
+a:visited {
+  color: var(--link-visited);
+}
+
 time {
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  font-family: var(--monospace-font);
 }
