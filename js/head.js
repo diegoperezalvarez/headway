@@ -35,7 +35,7 @@ function injectCells() {
 	customHeader.id = 'cell-header-injection';
 	customHeader.innerHTML = `
 	  <header id="app-header">
-		<span><a href="../" class="site-tagline">headway</a></span>
+		<span><a href="../" class="site-tagline">&larr;home</a></span>
 	  </header>
 	`;
 

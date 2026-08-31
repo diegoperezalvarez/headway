@@ -14,18 +14,18 @@
 
 /* Base Colors */
 :root {
-  --background: light-dark(#ffffff, #2e3440);          /* Main page background: pure white */
-  --foreground: light-dark(#2e3440, #d8dee9);          /* Body text: dark slate */
-  --muted: light-dark(#e5e9f0, #434c5e);               /* Soft gray-blue background for elements */
-  --muted-foreground: light-dark(#4c566a, #a3be8c);    /* Subtle sub-text */
+  --background: light-dark(#ffffff, #2e3440);
+  --foreground: light-dark(#2e3440, #d8dee9);
+  --muted: light-dark(#e5e9f0, #434c5e);
+  --muted-foreground: light-dark(#4c566a, #a3be8c);
   --popover: light-dark(#f0f4fc, #3b4252);
   --popover-foreground: light-dark(#2e3440, #d8dee9);
-  --card: light-dark(#f8fafc, #3b4252);               /* Slight off-white tint for cards */
+  --card: light-dark(#f8fafc, #3b4252);
   --card-foreground: light-dark(#3b4252, #e5e9f0);
-  --border: light-dark(#e2e8f0, #4c566a);             /* Crisp, light divider lines */
-  --input: light-dark(#e5e9f0, #3b4252);              /* Former background shade used for inputs */
+  --border: light-dark(#e2e8f0, #4c566a);
+  --input: light-dark(#e5e9f0, #3b4252);
   --primary: light-dark(#5e81ac, #88c0d0);
-  --title: light-dark(#828282, #ffffff);
+  --title: light-dark(#2e3440, #d8dee9);
   --primary-foreground: light-dark(#ffffff, #2e3440);
   --secondary: light-dark(#81a1c1, #4c566a);
   --secondary-foreground: light-dark(#2e3440, #eceff4);
@@ -81,7 +81,6 @@ body {
   font-family: var(--text-font) !important;
   font-weight: 800 !important;
   letter-spacing: -0.07em !important;
-  color: var(--title);
 }
 
 /* ==========================================================================
@@ -137,7 +136,7 @@ time {
 }
 
 #app-header a {
-  color: var(--header-footer);
+  color: var(--muted-foreground);
   text-decoration: none;
 }
 
