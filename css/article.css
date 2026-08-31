@@ -1,0 +1,10 @@
+/* ==========================================================================
+   Article overrides to avoid double scrollbars
+   ========================================================================== */
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100vh;
+  overflow: hidden; /* Forces scroll bar onto marimo's internal viewport */
+}

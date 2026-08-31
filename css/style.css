@@ -25,6 +25,7 @@
   --border: light-dark(#e2e8f0, #4c566a);             /* Crisp, light divider lines */
   --input: light-dark(#e5e9f0, #3b4252);              /* Former background shade used for inputs */
   --primary: light-dark(#5e81ac, #88c0d0);
+  --title: light-dark(#828282, #ffffff);
   --primary-foreground: light-dark(#ffffff, #2e3440);
   --secondary: light-dark(#81a1c1, #4c566a);
   --secondary-foreground: light-dark(#2e3440, #eceff4);
@@ -66,9 +67,7 @@
    2. GLOBAL BODY & CONTAINER STYLES
    ========================================================================== */
 
-body, 
-.marimo, 
-[data-marimo-app] {
+body {
   background-color: var(--background) !important;
   color: var(--foreground) !important;
   font-family: var(--text-font) !important;
@@ -78,52 +77,15 @@ body,
   padding: 0 1.25rem;
 }
 
-/* Align marimo container width with homepage */
-.marimo-notebook, 
-.marimo-app {
-  max-width: var(--max-width) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-
-/* ==========================================================================
-   3. HEADWAY SITE HEADER & AUTHOR FOOTER
-   ========================================================================== */
-
-.site-header {
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2.5rem;
-  padding-bottom: 1rem;
-}
-
-.site-title {
-  font-family: var(--heading-font);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--foreground);
-  text-decoration: none;
-}
-
-.site-title:hover {
-  color: var(--primary);
-}
-
 .site-tagline {
-  margin-top: 0.25rem;
-  color: var(--muted-foreground);
-  font-size: 0.95rem;
-}
-
-.author-card {
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.95rem;
-  color: var(--muted-foreground);
+  font-family: var(--text-font) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.07em !important;
+  color: var(--title);
 }
 
 /* ==========================================================================
-   4. HOMEPAGE LISTINGS & TYPOGRAPHY
+   3. HOMEPAGE LISTINGS & TYPOGRAPHY
    ========================================================================== */
 
 .article-list {
@@ -157,4 +119,61 @@ time {
   color: var(--muted-foreground);
   font-size: 0.875rem;
   font-family: var(--monospace-font);
+}
+
+/* ==========================================================================
+   4. Header / Footer
+   ========================================================================== */
+
+#app-header {
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  background-color: var(--background);
+  color: var(--title);
+}
+
+#app-header a {
+  color: var(--header-footer);
+  text-decoration: none;
+}
+
+#app-header a:hover {
+  text-decoration: underline;
+}
+
+#app-footer {
+  width: 100%;
+  /* margin: 40px auto 20px auto; */
+  padding: 16px 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-top: 1px dashed var(--border);
+  font-family: var(--text-font, sans-serif) !important;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+#app-footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#app-footer strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+#app-footer .footer-separator {
+  color: var(--border);
+}
+
+#app-footer time {
+  color: var(--muted-foreground);
 }
